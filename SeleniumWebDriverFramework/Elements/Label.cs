@@ -6,7 +6,6 @@
 // <created>26/03/2019</created>
 // <author>Sam Chen</author>
 //-----------------------------------------------------------------------------
-
 namespace SeleniumWebDriverFramework.Elements
 {
     using OpenQA.Selenium;
