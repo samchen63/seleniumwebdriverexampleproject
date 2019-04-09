@@ -24,7 +24,7 @@ namespace SeleniumWebDriverFramework.Pages
         public BookingPage ClickCartLinkAndGoToBookingPage()
         {
             // Wait for booking link present before clicking it
-            BookingLink.WaitForElementPresent(BookingLink.Identifier);
+            BookingLink.WaitForElementPresent();
             BookingLink.Click();
             return new BookingPage(SeleniumWebDriver);
         }

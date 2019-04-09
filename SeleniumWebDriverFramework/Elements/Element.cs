@@ -28,17 +28,17 @@ namespace SeleniumWebDriverFramework.Elements
         }
 
         // Help method to wait for element present on the page
-        public void WaitForElementPresent(By identifierType)
+        public void WaitForElementPresent()
         {
             var myWait = new WebDriverWait(SeleniumWebDriver, TimeSpan.FromSeconds(Timeout));
-            myWait.Until(d => d.FindElement(identifierType));
+            myWait.Until(d => d.FindElement(Identifier));
         }
 
         // Help method to wait for attribute value of element on the page
-        public void WaitForElementAttributeValue(By identifierType, string attribute, string value)
+        public void WaitForElementAttributeValue(string attribute, string value)
         {
             var myWait = new WebDriverWait(SeleniumWebDriver, TimeSpan.FromSeconds(Timeout));
-            myWait.Until(d => d.FindElement(identifierType).GetAttribute(attribute) == value);
+            myWait.Until(d => d.FindElement(Identifier).GetAttribute(attribute) == value);
         }
 
         // Help method to get text of element on the page

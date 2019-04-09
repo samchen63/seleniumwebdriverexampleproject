@@ -43,38 +43,43 @@ namespace SeleniumWebDriverFramework.Pages
         public void ClickAddCourseLinkToPopupSelectionBar()
         {
             // Wait for add course link present before clicking it
-            AddCourseLink.WaitForElementPresent(AddCourseLink.Identifier);
+            AddCourseLink.WaitForElementPresent();
             AddCourseLink.Click();
         }
 
         public void SelectACourseByName(string courseName)
         {
             // Wait for course name drop down present before selecting an option
-            CourseSelect.WaitForElementPresent(CourseSelect.Identifier);
+            CourseSelect.WaitForElementPresent();
             CourseSelect.SelectByText(courseName);
         }
 
         public void SelectADeliveryLocationByName(string deliveryName)
         {
             // Wait for delivery location drop down enabled before selecting an option
-            DeliverySelect.WaitForElementAttributeValue(DeliverySelect.Identifier, "class", "custom-select");
+            DeliverySelect.WaitForElementPresent();
+            DeliverySelect.WaitForElementAttributeValue("class", "custom-select");
             DeliverySelect.SelectByText(deliveryName);
         }
 
         public void SelectADeliveryLocationByIndex(int index)
         {
             // Wait for delivery location drop down enabled before selecting an option
-            DeliverySelect.WaitForElementAttributeValue(DeliverySelect.Identifier, "class", "custom-select");
+            DeliverySelect.WaitForElementPresent();
+            DeliverySelect.WaitForElementAttributeValue("class", "custom-select");
+            DeliverySelect.WaitForFirstOptionAvailable();
             DeliverySelect.SelectByIndex(index);
         }
 
         public void SelectAStartDateByIndex(int index)
         {
             // Wait for start date drop down enabled or "Start Today" auto selected before selecting an option
-            StartDateSelect.WaitForElementAttributeValueOrSpecificSelection(StartDateSelect.Identifier, "class", "custom-select", "Start Today");
+            StartDateSelect.WaitForElementPresent();
+            StartDateSelect.WaitForElementAttributeValueOrSpecificSelection("class", "custom-select", "Start Today");
             // Select an option if "Start Today" is not auto selected
             if (StartDateSelect.GetText() != "Start Today")
             {
+                StartDateSelect.WaitForFirstOptionAvailable();
                 StartDateSelect.SelectByIndex(index);
             }
         }
@@ -87,42 +92,42 @@ namespace SeleniumWebDriverFramework.Pages
         public void ClickAddCourseButtonToAddACourseIntoCart()
         {
             // Wait for add course link present before clicking it
-            AddCourseButton.WaitForElementPresent(AddCourseButton.Identifier);
+            AddCourseButton.WaitForElementPresent();
             AddCourseButton.Click();
         }
 
         public void VerifyBookedCourseTitle(string title)
         {
             // Wait for booked course title present before getting text from it
-            BookedCourseTitleLink.WaitForElementPresent(BookedCourseTitleLink.Identifier);
+            BookedCourseTitleLink.WaitForElementPresent();
             Assert.AreEqual(title, BookedCourseTitleLink.GetText());
         }
 
         public void VerifyBookedLocationValue(string location)
         {
             // Wait for booked location label present before getting text from it
-            BookedLocationLabel.WaitForElementPresent(BookedLocationLabel.Identifier);
+            BookedLocationLabel.WaitForElementPresent();
             Assert.AreEqual(location, BookedLocationLabel.GetText());
         }
 
         public void VerifyBookedStartDateValue(string startDate)
         {
             // Wait for booked start date label present before getting text from it
-            BookedStartDateLabel.WaitForElementPresent(BookedStartDateLabel.Identifier);
+            BookedStartDateLabel.WaitForElementPresent();
             Assert.AreEqual(startDate, BookedStartDateLabel.GetText());
         }
 
         public void ClickRemoveCourseLinkToDeleteAddedCourse()
         {
             // Wait for remove course link present before clicking it
-            RemoveCourseLink.WaitForElementPresent(RemoveCourseLink.Identifier);
+            RemoveCourseLink.WaitForElementPresent();
             RemoveCourseLink.Click();
         }
 
         public void VerifyNoCourseToBeAddedIntoCart()
         {
             // If no item label appears, it means that all courses are removed
-            NoItemAddedLabel.WaitForElementPresent(NoItemAddedLabel.Identifier);
+            NoItemAddedLabel.WaitForElementPresent();
         }
     }
 }

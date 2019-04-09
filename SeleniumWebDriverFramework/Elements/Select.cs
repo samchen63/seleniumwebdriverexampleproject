@@ -42,10 +42,19 @@ namespace SeleniumWebDriverFramework.Elements
         }
 
         // Help method to wait for a combination of conditions (attritube value and option's text)
-        public void WaitForElementAttributeValueOrSpecificSelection(By identifierType, string attribute, string value, string text)
+        public void WaitForElementAttributeValueOrSpecificSelection(string attribute, string value, string text)
         {
             var myWait = new WebDriverWait(SeleniumWebDriver, TimeSpan.FromSeconds(Timeout));
-            myWait.Until(d => d.FindElement(identifierType).GetAttribute(attribute) == value || d.FindElement(identifierType).Text == text);
+            myWait.Until(d => d.FindElement(Identifier).GetAttribute(attribute) == value || d.FindElement(Identifier).Text == text);
+        }
+
+        // Help method to wait for first option available
+        public void WaitForFirstOptionAvailable()
+        {
+            var myWait = new WebDriverWait(SeleniumWebDriver, TimeSpan.FromSeconds(Timeout));
+            var id = SeleniumWebDriver.FindElement(Identifier).GetAttribute("id");
+            var childSelector = "#" + id + " > option:nth-child(2)";
+            myWait.Until(d => d.FindElement(By.CssSelector(childSelector)));
         }
     }
 }
