@@ -119,7 +119,6 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestCaseAttribute("iSQI Certified Agile Business Analysis", null)]
         [NUnit.Framework.TestCaseAttribute("Leading SAFe Certification", null)]
         [NUnit.Framework.TestCaseAttribute("SAFe for Teams Certification", null)]
-        [NUnit.Framework.TestCaseAttribute("SAFe Scrum Master Certification", null)]
         [NUnit.Framework.TestCaseAttribute("SAFe DevOps Certification", null)]
         [NUnit.Framework.TestCaseAttribute("BCS Business Analysis Foundation Certificate", null)]
         [NUnit.Framework.TestCaseAttribute("BCS Requirements Engineering Certificate", null)]

@@ -48,7 +48,6 @@ Examples:
 | iSQI Certified Agile Business Analysis              |
 | Leading SAFe Certification                          |
 | SAFe for Teams Certification                        |
-| SAFe Scrum Master Certification                     |
 | SAFe DevOps Certification                           |
 | BCS Business Analysis Foundation Certificate        |
 | BCS Requirements Engineering Certificate            |

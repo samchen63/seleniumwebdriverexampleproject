@@ -25,7 +25,7 @@ namespace SeleniumWebDriverFramework.Pages
 
         public HomePage GoToHomePage()
         {
-            // Naivigate to Planit Testing australian home page
+            // Navigate to Planit Testing Australian home page
             SeleniumWebDriver.Navigate().GoToUrl(BaseUrl + "/au/Home");
             return new HomePage(SeleniumWebDriver);
         }

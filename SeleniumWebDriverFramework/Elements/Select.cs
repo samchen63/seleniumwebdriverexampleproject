@@ -27,7 +27,7 @@ namespace SeleniumWebDriverFramework.Elements
             selectElement.SelectByText(text);
         }
 
-        // Select option by option's postition 
+        // Select option by option's position 
         public void SelectByIndex(int index)
         {
             var selectElement = new SelectElement(SeleniumWebDriver.FindElement(Identifier));
@@ -41,7 +41,7 @@ namespace SeleniumWebDriverFramework.Elements
             return selectElement.SelectedOption.Text;
         }
 
-        // Help method to wait for a combination of conditions (attritube value and option's text)
+        // Help method to wait for a combination of conditions (attribute value and option's text)
         public void WaitForElementAttributeValueOrSpecificSelection(string attribute, string value, string text)
         {
             var myWait = new WebDriverWait(SeleniumWebDriver, TimeSpan.FromSeconds(Timeout));
