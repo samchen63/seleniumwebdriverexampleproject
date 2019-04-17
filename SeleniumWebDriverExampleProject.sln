@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumWebDriverFramework"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumSpecflowTest", "SeleniumSpecflowTest\SeleniumSpecflowTest.csproj", "{80E272B9-499F-43E7-B881-D429A5B407BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SikuliTest", "SikuliTest\SikuliTest.csproj", "{CC742943-518D-41AC-8EE5-0DC1AC0CC9D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{80E272B9-499F-43E7-B881-D429A5B407BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80E272B9-499F-43E7-B881-D429A5B407BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80E272B9-499F-43E7-B881-D429A5B407BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC742943-518D-41AC-8EE5-0DC1AC0CC9D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC742943-518D-41AC-8EE5-0DC1AC0CC9D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC742943-518D-41AC-8EE5-0DC1AC0CC9D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC742943-518D-41AC-8EE5-0DC1AC0CC9D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

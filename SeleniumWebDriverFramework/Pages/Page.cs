@@ -8,6 +8,9 @@
 //-----------------------------------------------------------------------------
 namespace SeleniumWebDriverFramework.Pages
 {
+    using System.IO;
+    using System.Reflection;
+
     using OpenQA.Selenium;
 
     // Parent class for all page objects
@@ -15,6 +18,7 @@ namespace SeleniumWebDriverFramework.Pages
     {
         // Base url for the entire web site
         private const string BaseUrl = "https://www.planittesting.com";
+        public string ImagePath = GetWorkingDirectory();
 
         public IWebDriver SeleniumWebDriver { get; set; }
 
@@ -28,6 +32,12 @@ namespace SeleniumWebDriverFramework.Pages
             // Navigate to Planit Testing Australian home page
             SeleniumWebDriver.Navigate().GoToUrl(BaseUrl + "/au/Home");
             return new HomePage(SeleniumWebDriver);
+        }
+
+        // Retrieve current working directory
+        private static string GetWorkingDirectory()
+        {
+            return new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName;
         }
     }
 }
