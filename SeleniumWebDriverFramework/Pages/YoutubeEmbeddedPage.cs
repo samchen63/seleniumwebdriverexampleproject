@@ -96,7 +96,7 @@ namespace SeleniumWebDriverFramework.Pages
             Screen.Click(FourEightZeroButtonPattern);
             // Allow mouse away from setting region
             Screen.Wait(MuteButtonPattern);
-            Screen.Click(MuteButtonPattern);
+            Screen.Hover(MuteButtonPattern);
         }
 
         public void Verify480pSelectedForQualityOfYoutubeVideo()
