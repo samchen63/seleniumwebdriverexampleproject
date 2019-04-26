@@ -11,34 +11,34 @@ namespace SeleniumWebDriverFramework.Pages
     using NUnit.Framework;
     using OpenQA.Selenium;
     using SeleniumWebDriverFramework.Elements;
-    using Sikuli4Net.sikuli_REST;
+    using SikuliSharp;
 
     // What we do page which contains an embedded youtube video
     public class YoutubeEmbeddedPage : Page
     {
         private readonly Link QualityAcceleratedLink;
-        private readonly Pattern PlayButtonPattern;
-        private readonly Pattern PauseButtonPattern;
-        private readonly Pattern MuteButtonPattern;
-        private readonly Pattern UnmuteButtonPattern;
-        private readonly Pattern SettingButtonPattern;
-        private readonly Pattern QualityButtonPattern;
-        private readonly Pattern FourEightZeroButtonPattern;
-        private readonly Pattern FourEightZeroSelectedButtonPattern;
-        private readonly Screen Screen;
+        private readonly IPattern PlayButtonPattern;
+        private readonly IPattern PauseButtonPattern;
+        private readonly IPattern MuteButtonPattern;
+        private readonly IPattern UnmuteButtonPattern;
+        private readonly IPattern SettingButtonPattern;
+        private readonly IPattern QualityButtonPattern;
+        private readonly IPattern FourEightZeroButtonPattern;
+        private readonly IPattern FourEightZeroSelectedButtonPattern;
+        private readonly ISikuliSession Screen;
 
         public YoutubeEmbeddedPage(IWebDriver seleniumWebDriver) : base(seleniumWebDriver)
         {
             QualityAcceleratedLink = new Link(By.CssSelector("a[class='service_second_menu-list_link js-service_second_menu-list_link'][href='#header2']"), seleniumWebDriver);
-            Screen = new Screen();
-            PlayButtonPattern = new Pattern(ImagePath + "\\Images\\play.png");
-            PauseButtonPattern = new Pattern(ImagePath + "\\Images\\pause.png");
-            MuteButtonPattern = new Pattern(ImagePath + "\\Images\\mute.png");
-            UnmuteButtonPattern = new Pattern(ImagePath + "\\Images\\unmute.png");
-            SettingButtonPattern = new Pattern(ImagePath + "\\Images\\setting.png");
-            QualityButtonPattern = new Pattern(ImagePath + "\\Images\\quality.png");
-            FourEightZeroButtonPattern = new Pattern(ImagePath + "\\Images\\480p.png");
-            FourEightZeroSelectedButtonPattern = new Pattern(ImagePath + "\\Images\\480pselected.png");
+            Screen = Sikuli.CreateSession();
+            PlayButtonPattern = Patterns.FromFile(ImagePath + "\\Images\\play.png");
+            PauseButtonPattern = Patterns.FromFile(ImagePath + "\\Images\\pause.png");
+            MuteButtonPattern = Patterns.FromFile(ImagePath + "\\Images\\mute.png");
+            UnmuteButtonPattern = Patterns.FromFile(ImagePath + "\\Images\\unmute.png");
+            SettingButtonPattern = Patterns.FromFile(ImagePath + "\\Images\\setting.png");
+            QualityButtonPattern = Patterns.FromFile(ImagePath + "\\Images\\quality.png");
+            FourEightZeroButtonPattern = Patterns.FromFile(ImagePath + "\\Images\\480p.png");
+            FourEightZeroSelectedButtonPattern = Patterns.FromFile(ImagePath + "\\Images\\480pselected.png");
         }
 
         public void ClickQualityAcceleratedLinkToYoutubeEmbeddedSection()
