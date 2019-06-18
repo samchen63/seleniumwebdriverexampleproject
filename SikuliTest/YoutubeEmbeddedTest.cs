@@ -1,11 +1,3 @@
-﻿//-----------------------------------------------------------------------------
-// <copyright file="YoutubeEmbeddedTest.cs" company="Planit Testing">
-//      Copyright © 2019 Planit Testing.
-//      All rights reserved.
-// </copyright>
-// <created>17/04/2019</created>
-// <author>Sam Chen</author>
-//-----------------------------------------------------------------------------
 namespace SikuliTest
 {
     using NUnit.Framework;
